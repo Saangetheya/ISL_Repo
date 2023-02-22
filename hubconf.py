@@ -120,6 +120,7 @@ def sample_test(model, test_data):
         predicted, actual = classes[pred[0].argmax(0)], classes[y]
         print(f'Predicted: "{predicted}", Actual: "{actual}"')
          
-  
+
+ #Completed!!
   
     
