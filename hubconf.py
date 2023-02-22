@@ -63,7 +63,7 @@ def create_DL(trd,tsd,btch=64):
 def get_model():
   return NN().to(device)
 
-def train_d(dtldr,mdl,lfn=loss_fn,opt=optimizer):
+def train_d(dtldr,mdl,lfn,opt):
   size = len(dtldr.dataset)
   mdl.train()
   for batch, (X,y) in enumerate(dtldr):
@@ -79,7 +79,7 @@ def train_d(dtldr,mdl,lfn=loss_fn,opt=optimizer):
       loss,current = loss.item(),batch*len(X)
       print(f"loss: {loss:>7f} [{current:>5d}/{size:>5d}]")
       
-def test_d(dtldr,mdl,lfn=loss_fn):
+def test_d(dtldr,mdl,lfn):
   size = len(dtldr.dataset)
   num_b = len(dtldr)
   mdl.eval()
