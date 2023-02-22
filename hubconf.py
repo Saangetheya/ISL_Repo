@@ -91,7 +91,7 @@ def test_d(dtldr,mdl,lfn):
   with torch.no_grad():
     for X,y in dtldr:
       X,y = X.to(device),y.to(device)
-      pred = model(X)
+      pred = mdl(X)
       test_loss += lfn(pred,y).item()
       correct += (pred.argmax(1)==y).type(torch.float).sum().item()
   test_loss /= num_b
