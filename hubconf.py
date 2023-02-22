@@ -20,7 +20,7 @@ classes = [
     "Ankle boot",
 ]
 
-class NN(nn.module):
+class NN(nn.Module):
   def __init__(self):
     super(NeuralNetwork,self).__init__()
     self.flatten = nn.Flatten()
