@@ -36,6 +36,10 @@ class NN(nn.Module):
     logits = self.linear_relu_stack(x)
     return logits
   
+def get_lossfn_and_optimizer(mymodel):
+    loss_fn = nn.CrossEntropyLoss()
+    optimizer = torch.optim.SGD(mymodel.parameters(), lr=1e-3)
+    return loss_fn, optimizer
 
 def load_data():
   train_data = datasets.FashionMNIST(
